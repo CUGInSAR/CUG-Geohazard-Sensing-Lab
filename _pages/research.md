@@ -37,14 +37,14 @@ classes: wide research
           <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 0rem; align-items: center;">
             <!-- 第一张图片 + 对应图名 -->
             <div style="width: 70%; display: flex; flex-direction: column; align-items: center;">
-              <img src="/insarsxg/assets/images/research/pic2.png" alt="某沿海区域 InSAR 地表形变点云分布图" style="width: 100%; object-fit: cover;">
+              <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/pic2.png" alt="某沿海区域 InSAR 地表形变点云分布图" style="width: 100%; object-fit: cover;">
               <p style="width: 100%; text-align: center; font-size: 0.8rem !important; color: #666; margin-top: 0rem; margin-bottom: 0;">
                 某沿海区域 InSAR 地表形变点云分布图
               </p>
             </div>
             <!-- 第二张图片 + 对应图名 -->
             <div style="width: 70%; display: flex; flex-direction: column; align-items: center;">
-              <img src="/insarsxg/assets/images/research/pic3.jpg" alt="基于 DS-InSAR 的区域地面沉降速率空间分布" style="width: 100%; object-fit: cover;">
+              <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/pic3.jpg" alt="基于 DS-InSAR 的区域地面沉降速率空间分布" style="width: 100%; object-fit: cover;">
               <p style="width: 100%; text-align: center; font-size: 0.8rem !important; color: #666; margin-top: 0rem; margin-bottom: 0;">
                 基于 PS-InSAR 的区域地面沉降速率空间分布
               </p>
@@ -60,7 +60,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/research_3D.png" alt="2009/02-2010/04期间树坪滑坡累计三维位移" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/research_3D.png" alt="2009/02-2010/04期间树坪滑坡累计三维位移" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           2009/02-2010/04期间树坪滑坡累计三维位移
         </p>
@@ -75,7 +75,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/pic42.jpg" alt="星载遥感支撑下的滑坡监测与早期识别多场景应用" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/pic42.jpg" alt="星载遥感支撑下的滑坡监测与早期识别多场景应用" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           星载遥感支撑下的滑坡监测与早期识别多场景应用
         </p>
@@ -90,7 +90,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/research_dxs2.png" alt="唐山南部 2015—2021 年地表垂直形变速率" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/research_dxs2.png" alt="唐山南部 2015—2021 年地表垂直形变速率" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           唐山南部 2015—2021 年地表垂直形变速率
         </p>
@@ -105,7 +105,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/pic5.png" alt="额尔古纳地区季节性形变、道路裂缝及冻土特征" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/pic5.png" alt="额尔古纳地区季节性形变、道路裂缝及冻土特征" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           额尔古纳地区季节性形变、道路裂缝及冻土特征
         </p>
@@ -120,7 +120,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/research_dam.jpg" alt="大坝建模系数空间分布图" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/research_dam.jpg" alt="大坝建模系数空间分布图" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           大坝建模系数空间分布图
         </p>
@@ -135,7 +135,7 @@ classes: wide research
         </p>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="/insarsxg/assets/images/research/research_AI2.png" alt="黄土高原滑坡易发性分区及滑坡 - 区域分布频率比" style="width: 100%; object-fit: cover;">
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/research/research_AI2.png" alt="黄土高原滑坡易发性分区及滑坡 - 区域分布频率比" style="width: 100%; object-fit: cover;">
         <p style="width: 100%; text-align: center; font-size: 0.9rem !important; color: #666; margin-top: 0.5rem;">
           黄土高原滑坡易发性分区及滑坡 - 区域分布频率比
         </p>
