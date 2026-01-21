@@ -1,1 +1,611 @@
+---
+# Only the main Sass file needs front matter
+---
+$max-width: 100% !global; /* 强制修改主题默认最大宽度，优先级最高 */
+$content-width: 100% !global; /* 覆盖主题内容区域宽度，消除3/4留白核心 */
+$sidebar-width: 0 !global; /* 禁用侧边栏（若有侧边栏会挤占内容宽度，兜底） */
+$content-area-width: 75% !global;
+@import "minimal-mistakes";
 
+/* 全局基础优化（核心：防止溢出+统一盒模型+居中兜底） */
+html, body {
+  width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+* {
+  box-sizing: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 新增：彻底覆盖所有主题容器的固定宽度，确保居中生效（不改动内部布局） */
+.page__inner-wrap,
+.entry-content,
+.initial-content,
+.wrapper,
+.container,
+.content-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* 1. 顶部导航栏 (Masthead) - 仿 Liang Group 风格（保持原有布局，仅强化居中） */
+.masthead {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 0 !important;
+  width: 100% !important; /* 仅将100vw改为100%，保障全宽无滚动条冲突，其他不变 */
+  position: relative !important;
+  z-index: 999 !important;
+  margin: 0 auto !important;
+}
+
+.masthead__inner-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0 !important;
+  padding: 0 3rem !important;
+  height: 80px !important;
+  max-width: 1600px !important;
+  margin: 0 auto !important;
+}
+
+.masthead .masthead__inner-wrap .site-title {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+.masthead__menu {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 0 !important;
+}
+
+.visible-links {
+  display: flex !important;
+  gap: 3.5rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+}
+
+.masthead__menu-item {
+  display: block !important;
+  list-style-type: none !important;
+}
+
+.masthead .masthead__inner-wrap .masthead__menu .visible-links .masthead__menu-item a {
+  color: #555 !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.02em !important;
+  text-decoration: none !important;
+  position: relative !important;
+  white-space: nowrap !important;
+}
+
+.masthead__menu-item a:hover {
+  color: #009688 !important;
+}
+
+.masthead__menu-item a.current,
+.masthead__menu-item a:active {
+  color: #009688 !important;
+  font-weight: 700 !important;
+}
+
+/* 2. 全局内容全宽（覆盖所有主题容器，仅保障Banner铺满，取消3/4宽度限制） */
+.page,
+.archive,
+.single,
+.layout--single,
+.page__content,
+.page__main {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.people .page__content,
+.people .wrapper,
+.publications .page__content,
+.publications .wrapper {
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* 3. Hero Banner (大图区域) - 全局通用（铺满整个页面，首页和Links页面格式一致） */
+.hero-section {
+  position: relative !important;
+  width: 100% !important; /* 替换100vw为100%，解决滚动条冲突，所有页面Banner全宽铺满 */
+  height: 450px !important;
+  background-size: cover !important;
+  background-position: center center !important; /* 强化居中，防止图片截断 */
+  background-repeat: no-repeat !important; /* 新增：防止图片重复，避免空白 */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #fff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important; /* 新增：兜底隐藏意外溢出 */
+}
+
+.home .hero-section {
+  background-image: url('/insarsxg/assets/images/home/hero1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 450px !important;
+  width: 100% !important;
+}
+
+.research .hero-section {
+  background-image: url('/insarsxg/assets/images/research/research_banner1.png') !important;
+}
+
+.people .hero-section {
+  background-image: url('/insarsxg/assets/images/people/people_banner1.png') !important;
+}
+
+.links .hero-section {
+  background-image: url('/insarsxg/assets/images/links/links_banner1.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 450px !important;
+  width: 100% !important;
+}
+
+.publications .hero-section {
+  background-image: url('/insarsxg/assets/images/publications/publications_banner1.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 450px !important;
+  width: 100% !important;
+}
+
+.photos .hero-section {
+  background-image: url('/insarsxg/assets/images/photos/photos_banner1.png') !important;
+}
+
+.hero-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  z-index: 1 !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 0 20px !important;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+  color: #fff !important;
+}
+
+.hero-content p {
+  font-size: 1.5rem !important;
+  font-weight: 300 !important;
+  opacity: 0.9 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+  color: #fff !important;
+}
+
+/* 4. 简介文字区域 - 全局通用（设置3/4宽度+居中，取消全屏） */
+.intro-section {
+  background-color: #fff !important;
+  padding: 4rem 2rem !important;
+  text-align: left !important;
+  width: 100% !important; /* 外层容器仍全屏，保证背景色铺满 */
+  max-width: 100% !important; /* 保留全屏，消除右侧空白 */
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important; /* 保留flex居中，用于内部容器对齐 */
+  overflow-x: hidden !important; /* 新增：兜底无横向空白 */
+}
+
+.intro-container {
+  width: $content-area-width !important; /* 核心：使用3/4宽度变量（75%），也可直接写 75% */
+  max-width: $content-area-width !important; /* 锁定最大宽度为3/4，不随屏幕缩放超出 */
+  padding: 0 2rem !important; /* 保留内边距，避免文字贴边 */
+  margin: 0 auto !important; /* 核心：水平居中，实现内容居中显示 */
+  box-sizing: border-box !important;
+}
+
+.intro-container p {
+  font-size: 1.3rem !important;
+  line-height: 1.8 !important;
+  color: #444 !important;
+  margin-bottom: 1rem !important;
+  text-indent: 2em !important;
+}
+
+/* 5. 自定义页脚 - 全局通用（保留但不启用，保持原有布局） */
+.custom-footer {
+  background-color: #222 !important;
+  color: #fff !important;
+  padding: 2rem 2rem !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+.custom-footer p {
+  margin: 0.5rem 0 !important;
+  font-size: 0.9rem !important;
+}
+
+.theme-credit {
+  font-size: 0.8rem !important;
+  opacity: 0.6 !important;
+}
+
+/* 首页简介核心：和 .intro-container 样式完全统一，3/4宽度+居中 */
+.home-intro-1300 {
+  // 布局属性：3/4宽度+居中（和其他页面一致）
+  width: $content-area-width !important;
+  max-width: $content-area-width !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+  
+  // 文字样式：和 .intro-container p 完全对齐，实现样式统一
+  p {
+    font-size: 1.3rem !important;
+    line-height: 1.8 !important;
+    color: #444 !important;
+    margin-bottom: 1rem !important;
+    text-indent: 2em !important;
+  }
+}
+
+/* 7. Research页专属样式（图文布局）- 保留原有设置，取消3/4宽度限制 */
+.research .intro-section {
+  text-align: left !important;
+  padding: 2rem 2rem !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.research .intro-section:first-of-type {
+  padding-bottom: 1rem !important;
+  padding-top: 2rem !important;
+}
+
+.research .intro-container h2 {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  color: #333 !important;
+}
+
+.research .intro-container h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+.research .intro-container .research-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.research .research-item .text-block {
+  flex: 1 !important;
+  min-width: 300px !important;
+}
+
+.research .research-item .img-block {
+  flex: 1 !important;
+  min-width: 300px !important;
+}
+
+.research .img-block img {
+  width: 100% !important;
+  object-fit: cover !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.research .img-block p {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  text-align: center !important;
+}
+
+/* 8. People/Publications页专属样式 - 3/4宽度+居中，保留其他基础样式 */
+.people .intro-container,
+.publications .intro-container {
+  width: $content-area-width !important; /* 核心：3/4宽度 */
+  max-width: $content-area-width !important; /* 锁定3/4宽度 */
+  margin: 0 auto !important; /* 核心：水平居中 */
+  padding: 0 2rem !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+.people .pi-info h2,
+.people .pi-info p:nth-of-type(1),
+.people .section-block h2,
+.people .section-block h3 {
+  text-align: center !important;
+  text-indent: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.people .pi-info p[style*="font-weight: 600"] {
+  text-align: center !important;
+  text-indent: 0 !important;
+}
+
+.people .student-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 600px !important;
+}
+
+.people .student-list li,
+.people .student-list li strong {
+  text-align: center !important;
+  line-height: 1.8 !important;
+  margin: 0.5rem 0 !important;
+  text-indent: 0 !important;
+}
+
+.people .pi-info p:not(:nth-of-type(1)):not([style*="font-weight: 600"]),
+.people .section-block p,
+.people .prospective {
+  text-align: left !important;
+  text-indent: 2em !important;
+  max-width: 1300px !important; /* 仅限制内部文字容器，非页面3/4宽度 */
+  margin: 0 !important;
+  line-height: 1.7 !important;
+}
+
+.people .pi-section {
+  display: flex !important;
+  gap: 3rem !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.people .pi-photo {
+  flex: 0 0 350px !important;
+}
+
+.people .pi-photo img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px !important;
+}
+
+.people .pi-info {
+  flex: 1 !important;
+}
+
+.people .group-photos {
+  display: flex !important;
+  gap: 1.5rem !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.people .group-photos img {
+  width: 300px !important;
+  height: auto !important;
+  border-radius: 6px !important;
+}
+
+.people .section-block h2 {
+  margin-top: 2rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+}
+
+.people .section-block {
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.publications .intro-container h2 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 2rem 0 1rem 0 !important;
+  color: #333 !important;
+}
+
+.publications .intro-container h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+.publications .intro-container ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.publications .intro-container li {
+  line-height: 1.8 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.1rem !important;
+  color: #444 !important;
+}
+
+/* 9. 全局content-center类（取消3/4宽度限制，兜底兼容） */
+.content-center {
+  width: 100% !important; /* 取消3/4宽度，自适应全屏 */
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box !important;
+}
+
+.projects-section {
+  background-color: #fff !important;
+  padding: 4rem 2rem !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.projects-container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.projects-container p {
+  font-size: 1.3rem !important;
+  line-height: 2 !important;
+  color: #333 !important;
+  margin: 0.5rem 0 !important;
+}
+
+/* 10. Links页链接样式 - 保留原有设置，无任何修改 */
+.links .intro-container a {
+  color: #006400 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.links .intro-container a:hover {
+  color: #004d00 !important;
+  text-decoration: underline !important;
+}
+
+.links .intro-container li {
+  line-height: 2.0 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 11. Photos页图片标题样式 - 保留原有设置，无任何修改 */
+.photo-caption {
+  font-size: 14px !important;
+  color: #333 !important;
+  margin-top: 10px !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+/* 12. 移动端适配（合并所有断点样式，仅保留有效配置） */
+@media (max-width: 768px) {
+  .masthead__inner-wrap {
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+    height: auto !important;
+    flex-wrap: wrap !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin: 0 auto !important;
+  }
+
+  .visible-links {
+    gap: 1rem !important;
+  }
+
+  .masthead__menu-item a {
+    font-size: 1rem !important;
+  }
+
+  .hero-section {
+    height: 300px !important;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+  }
+
+  .intro-section {
+    padding: 2rem 1rem !important;
+  }
+
+  .intro-container {
+    max-width: 95% !important;
+  }
+
+  .research .research-item {
+    gap: 1rem !important;
+  }
+
+  .home .hero-section {
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 250px !important;
+  }
+
+  .people .intro-container,
+  .publications .intro-container {
+    max-width: 100% !important;
+  }
+
+  /* 首页1300px容器移动端适配 */
+  .home-intro-1300 {
+    max-width: 100% !important; /* 小屏幕下占满95%宽度，避免文字贴边 */
+    padding: 0 1rem !important; /* 减少内边距，适配小屏幕 */
+    margin: 0 auto !important; /* 保持居中 */
+  }
+}
+
+/* 修正 People 页“期望学生”段落 - 保留原有设置，无任何修改 */
+.people .prospective {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 首页终极优化：确保全宽无空白，无冗余样式 */
+.home .page,
+.home .page__inner-wrap,
+.home .entry-content,
+.home .initial-content,
+.home .container,
+.home .wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.home .masthead {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
