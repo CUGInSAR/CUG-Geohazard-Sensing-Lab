@@ -13,7 +13,7 @@ breadcrumbs: false
 # 构建设置
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
-url: "https://CUGInSAR"
+url: "https://cuginsar.github.io"
 baseurl: "/CUG-Geohazard-Sensing-Lab"
 timezone: "Asia/Shanghai"
 
