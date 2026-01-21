@@ -1,115 +1,69 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+title: "CUG-Geohazard-Sensing-Lab"
+email: "shixuguo@cug.edu.cn"
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: MM
-email:
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+# 机构信息
+university: "中国地质大学（武汉）"
+department: "地理与信息工程学院"
+
+# 主题设置
 minimal_mistakes_skin: default
-search: true
+search: false
+breadcrumbs: false
 
-# Build settings
+# 构建设置
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+url: "https://shaky-lu.github.io"
+baseurl: "/insarsxg"
+timezone: "Asia/Shanghai"
+
+# ❌ 彻底关闭博客功能
+paginate: 0
+
+# 导航菜单（⚠️ 必须用 data/navigation.yml，这里不再写）
+# navigation 将从 _data/navigation.yml 读取
 
 include:
   - _pages
+  - assets
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-feed
   - jemoji
   - jekyll-include-cache
 
+# 作者信息（仅用于 People / Team 页面）
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name: "史绪国"
+  avatar: "/assets/images/xuguo_shi.jpg"
+  bio: "中国地质大学（武汉）副教授，主要研究方向为利用多源遥感手段刻画地表形变与环境变化过程。"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=K-Wd-aYAAAAJ&hl"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:shixuguo@cug.edu.cn"
+    - label: "学院主页"
+      icon: "fas fa-fw fa-university"
+      url: "https://grzy.cug.edu.cn/shixuguo"
 
+# 页脚 - 恢复系统默认页脚
 footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+  enabled: true 
+feed:
+  enabled: false
 
+# 页面默认布局（不是 posts）
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# 移除强制隐藏页脚的配置
+# site-footer:
+#   enabled: false
