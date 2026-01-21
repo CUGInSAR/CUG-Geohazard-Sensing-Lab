@@ -93,7 +93,7 @@ classes: wide photos
     <!-- 图片9 -->
     <div style="margin-bottom: 0; /* 最后一张图片取消底部额外间距 */">
       <div style="width: 100%; display: flex; justify-content: center;">
-        <img src="/CUG-Geohazard-Sensing-Labassets/images/photos/photo92.jpg" alt="2025年6月 毕业合影（闫斌 刘桔芬 陈典强 金昊 鲍萍 郭蒙蒙 陈薇 赖振炎）" style="width: 600px; max-width: 100%; object-fit: cover; border-radius: 8px;"/>
+        <img src="/CUG-Geohazard-Sensing-Lab/assets/images/photos/photo92.jpg" alt="2025年6月 毕业合影（闫斌 刘桔芬 陈典强 金昊 鲍萍 郭蒙蒙 陈薇 赖振炎）" style="width: 600px; max-width: 100%; object-fit: cover; border-radius: 8px;"/>
       </div>
       <p style="width: 100%; text-align: center; font-size: 0.8125rem; color: #333; margin-top: 10px; font-weight: 500;">
         2025年6月 毕业合影（闫斌 刘桔芬 陈典强 金昊 鲍萍 郭蒙蒙 陈薇 赖振炎）
