@@ -13,8 +13,8 @@ breadcrumbs: false
 # 构建设置
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
-url: "https://shaky-lu.github.io"
-baseurl: "/insarsxg"
+url: "https://CUGInSAR"
+baseurl: "/CUG-Geohazard-Sensing-Lab"
 timezone: "Asia/Shanghai"
 
 # ❌ 彻底关闭博客功能
